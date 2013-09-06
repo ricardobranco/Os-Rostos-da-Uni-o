@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a87e880a-c652-4504-8c65-d39fbbeb8c9a" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/fotos/Nazare.png" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/fotos/Nazaré.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apoiantes.html" afterPath="$PROJECT_DIR$/apoiantes.html" />
     </list>
     <ignored path="Os Rostos da União.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="a87e880a-c652-4504-8c65-d39fbbeb8c9a" time="1378478993049" ignored="false" />
-    <file path="/apoiantes.html" changelist="a87e880a-c652-4504-8c65-d39fbbeb8c9a" time="1378479022239" ignored="false" />
+    <file path="/apoiantes.html" changelist="a87e880a-c652-4504-8c65-d39fbbeb8c9a" time="1378479157325" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +32,7 @@
       <file leaf-file-name="apoiantes.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/apoiantes.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="467" column="27" selection-start="14810" selection-end="14810" vertical-scroll-proportion="0.35286105">
+            <state line="479" column="60" selection-start="15227" selection-end="15227" vertical-scroll-proportion="0.5980926">
               <folding />
             </state>
           </provider>
@@ -103,6 +105,52 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Os Rostos da União" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Os Rostos da União" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Os Rostos da União" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Os Rostos da União" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Os Rostos da União" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fotos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Os Rostos da União" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Os Rostos da União" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fonts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -212,7 +260,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/apoiantes.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="467" column="27" selection-start="14810" selection-end="14810" vertical-scroll-proportion="0.35286105">
+        <state line="479" column="60" selection-start="15227" selection-end="15227" vertical-scroll-proportion="0.5980926">
           <folding />
         </state>
       </provider>
