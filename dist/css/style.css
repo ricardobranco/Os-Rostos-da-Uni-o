@@ -1,0 +1,1284 @@
+/* draw triangles using the border trick 
+* 
+* @example
+* .b { @include triangle("bottom", #0f0, 100px, 200px);}
+* .r { @include triangle("right", #00f, 100px, 200px);}
+* .l { @include triangle("left", #f00, 100px, 200px);}
+* .tr { @include triangle("top-right", #0f0, 100px, 200px);}
+* .tl { @include triangle("top-left", #00f, 100px, 200px);}
+* .br { @include triangle("bottom-right", #f00, 100px, 200px);}
+* .bl { @include triangle("bottom-left", #0f0, 100px, 200px);}
+* */
+@font-face {
+  font-family: 'LucidaGrandeRegular';
+  src: url("font/lucida_grande-webfont.eot");
+  src: url("font/lucida_grande-webfont.eot?#iefix") format("embedded-opentype"), url("font/lucida_grande-webfont.woff") format("woff"), url("font/lucida_grande-webfont.ttf") format("truetype"), url("font/lucida_grande-webfont.svg#LucidaGrandeRegular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* line 82, et2013.scss */
+body {
+  margin-top: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #111;
+}
+
+/* line 87, et2013.scss */
+h1, h2, h3 {
+  font-family: 'Abel', sans-serif;
+  padding: 0;
+  margin: 0;
+  font-weight: normal;
+  padding-bottom: 0.5em;
+}
+
+/* line 94, et2013.scss */
+h1 {
+  font-size: 30px;
+}
+
+/* line 97, et2013.scss */
+h1 {
+  font-size: 24px;
+  padding-bottom: 0.5em;
+  margin-bottom: 1em;
+}
+
+/* line 102, et2013.scss */
+h4 {
+  padding: 0;
+  margin: 0;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* line 108, et2013.scss */
+p {
+  margin: 0 0 1em;
+}
+
+/* line 111, et2013.scss */
+a, a:active, a:visited {
+  color: #ff6600;
+}
+
+/* line 112, et2013.scss */
+a:hover {
+  color: #333333;
+}
+
+/* line 113, et2013.scss */
+.wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  background-color: #fff;
+  width: 80%;
+}
+
+/* line 120, et2013.scss */
+.block-wrap {
+  padding-right: 30px;
+}
+
+/* line 123, et2013.scss */
+.header-bar {
+  position: relative;
+}
+
+/* line 126, et2013.scss */
+.header-bar:after {
+  content: "";
+  display: block;
+  width: 50%;
+  background-color: #fafafc;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* line 137, et2013.scss */
+.header-bar.logo-bar {
+  margin-bottom: 15px;
+}
+
+/* line 143, et2013.scss */
+.header-bar.logo-bar .logo-psd {
+  width: 7.5%;
+  position: absolute;
+  right: 0;
+  bottom: 0px;
+  min-width: 45px;
+}
+
+/* line 150, et2013.scss */
+.header-bar.logo-bar .logo-campanha {
+  width: 40%;
+  max-width: 460px;
+  min-width: 200px;
+  position: relative;
+  margin: -6px 0;
+}
+
+/* line 157, et2013.scss */
+.header-bar.image-bar {
+  margin-bottom: 20px;
+}
+
+/* line 160, et2013.scss */
+.header-bar .wrap {
+  height: 100%;
+  z-index: 2;
+}
+
+/* line 164, et2013.scss */
+.header-bar .wrap .content {
+  border-left: 10px solid #111;
+  padding-left: 10px;
+}
+
+/* line 168, et2013.scss */
+.header-bar .wrap .content h2, .header-bar .wrap .content h3 {
+  margin: 0;
+}
+
+/* line 171, et2013.scss */
+.header-bar .wrap .content.header-gallery {
+  border-left: none;
+  position: relative;
+  padding-left: 0;
+}
+
+/* line 176, et2013.scss */
+.header-bar .wrap .content.header-gallery:after {
+  content: "";
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=26);
+  opacity: 0.26;
+  display: block;
+  width: 10px;
+  height: 100%;
+  background-color: #fafafc;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* line 188, et2013.scss */
+.header-bar .wrap .content.header-gallery img {
+  width: 100%;
+}
+
+/* line 191, et2013.scss */
+.header-bar .wrap .content.header-gallery img.logotexto {
+    position: absolute;
+    width: 60%;
+    padding-left: 5%;
+    padding-top: 5%;
+}
+
+/* NAVIGATION */
+/* line 200, et2013.scss */
+.main-header nav {
+  overflow: visible;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #111;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+/* line 201, et2013.scss */
+.main-header nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  float: right;
+  z-index: 5;
+  position: relative;
+}
+/* line 202, et2013.scss */
+.main-header nav li {
+  margin-left: 20px;
+  padding: 15px 0 30px;
+  float: left;
+}
+/* line 204, et2013.scss */
+.main-header nav li a {
+  text-decoration: none;
+  color: #111;
+  display: block;
+  position: relative;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+/* line 206, et2013.scss */
+.main-header nav li a.open-menu {
+  display: none;
+  background-color: #f0f0f0;
+}
+/* line 209, et2013.scss */
+.main-header nav li a.open-menu:hover {
+  background-color: #f0f0f0;
+  color: #111;
+}
+/* line 214, et2013.scss */
+.main-header nav li a span {
+  position: relative;
+}
+/* line 215, et2013.scss */
+.main-header nav li a .copy {
+  position: relative;
+  z-index: 2;
+}
+/* line 218, et2013.scss */
+.main-header nav li a .bg {
+  display: block;
+  background-color: #ff6600;
+  position: absolute;
+  top: -85px;
+  left: -6px;
+  width: 0;
+  height: 40px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+/* line 222, et2013.scss */
+.main-header nav li a.homepage .bg {
+  border: none;
+  border-left: 80px solid transparent;
+  border-bottom: 11px solid white;
+}
+/* line 223, et2013.scss */
+.main-header nav li a.a-candidatura .bg {
+  border: none;
+  border-left: 109px solid transparent;
+  border-bottom: 12px solid white;
+}
+/* line 224, et2013.scss */
+.main-header nav li a.agenda .bg {
+  border: none;
+  border-left: 63px solid transparent;
+  border-bottom: 7px solid white;
+}
+/* line 225, et2013.scss */
+.main-header nav li a.noticias .bg {
+  border: none;
+  border-left: 69px solid transparent;
+  border-bottom: 8px solid white;
+}
+/* line 226, et2013.scss */
+.main-header nav li a.clipping .bg {
+  border: none;
+  border-left: 68px solid transparent;
+  border-bottom: 8px solid white;
+}
+/* line 227, et2013.scss */
+.main-header nav li a.apoiar .bg {
+  border: none;
+  border-left: 179px solid transparent;
+  border-bottom: 20px solid white;
+}
+/* line 228, et2013.scss */
+.main-header nav li a.contactos .bg {
+  border: none;
+  border-left: 86px solid transparent;
+  border-bottom: 10px solid white;
+}
+/* line 237, et2013.scss */
+body.a-candidatura .main-header nav li a.a-candidatura, body.agenda .main-header nav li a.agenda, body.noticias .main-header nav li a.noticias, body.clipping .main-header nav li a.clipping, body.apoiar .main-header nav li a.apoiar, body.contactos .main-header nav li a.contactos, body.homepage .main-header nav li a.homepage, .main-header nav li a.active, .main-header nav li a:hover {
+  color: #fff;
+}
+/* line 239, et2013.scss */
+body.a-candidatura .main-header nav li a.a-candidatura .bg, body.agenda .main-header nav li a.agenda .bg, body.noticias .main-header nav li a.noticias .bg, body.clipping .main-header nav li a.clipping .bg, body.apoiar .main-header nav li a.apoiar .bg, body.contactos .main-header nav li a.contactos .bg, body.homepage .main-header nav li a.homepage .bg, .main-header nav li a.active .bg, .main-header nav li a:hover .bg {
+  top: -15px;
+}
+
+/* a candidatura */
+/* line 252, et2013.scss */
+.a-candidatura .block1 nav {
+  margin-top: -1.5em;
+  padding-bottom: 1.5em;
+}
+/* line 255, et2013.scss */
+.a-candidatura .block1 nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+/* line 256, et2013.scss */
+.a-candidatura .block1 nav li {
+  display: inline-block;
+}
+/* line 257, et2013.scss */
+.a-candidatura .block1 nav a {
+  padding-right: 10px;
+  margin-right: 10px;
+  display: inline-block;
+  border-right: 1px solid #222;
+  line-height: 14px;
+}
+/* line 258, et2013.scss */
+.a-candidatura .block1 nav a.active {
+  color: #222;
+  text-decoration: none;
+}
+/* line 264, et2013.scss */
+.a-candidatura .block1 nav li:last-child a {
+  border-right: none;
+}
+/* line 266, et2013.scss */
+.a-candidatura .block1 img {
+  max-width: 100%;
+  border: 10px solid #F7F9FB;
+  margin: 20px 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 269, et2013.scss */
+.a-candidatura .block1 a.fancybox {
+  display: block;
+  border: 10px solid #F7F9FB;
+  margin: 20px 0;
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 271, et2013.scss */
+.a-candidatura .block1 a.fancybox img {
+  border: 0;
+  margin: 0;
+}
+/* line 274, et2013.scss */
+.a-candidatura .block1 a.fancybox:hover {
+  border-color: #FF6600;
+}
+
+/* footer */
+/* line 282, et2013.scss */
+.main-footer {
+  background-color: #333;
+  padding: 55px 0 40px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* line 284, et2013.scss */
+.main-footer .wrap {
+  background-color: #333;
+  overflow: hidden;
+}
+/* line 287, et2013.scss */
+.main-footer ul {
+  padding: 0;
+  float: left;
+}
+/* line 289, et2013.scss */
+.main-footer ul li {
+  float: left;
+}
+/* line 293, et2013.scss */
+.main-footer ul li a {
+  text-decoration: none;
+  display: block;
+  position: relative;
+  float: left;
+  padding-right: 20px;
+  color: #FFF;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+/* line 298, et2013.scss */
+.main-footer ul.social {
+  float: right;
+}
+/* line 300, et2013.scss */
+.main-footer ul.social li a {
+  padding: 0 0 0 10px;
+}
+/* line 303, et2013.scss */
+.main-footer a {
+  color: #FFF;
+  font-size: 12px;
+}
+/* line 304, et2013.scss */
+.main-footer a:hover {
+  color: #ff6600;
+}
+/* line 308, et2013.scss */
+.main-footer .bottom {
+  margin-top: 20px;
+  color: #FFF;
+  font-size: 12px;
+  position: relative;
+}
+/* line 313, et2013.scss */
+.main-footer .bottom span {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+/* CONTENT */
+/* line 319, et2013.scss */
+.main-content {
+  padding: 40px 0 50px;
+  overflow: hidden;
+}
+/* line 321, et2013.scss */
+.main-content .block1 {
+  float: left;
+  width: 60%;
+}
+/* line 324, et2013.scss */
+.main-content .block2 {
+  float: left;
+  width: 40%;
+}
+/* line 327, et2013.scss */
+.main-content .box {
+  background-color: #f7f9fb;
+  position: relative;
+  padding: 10px 10px;
+  margin-bottom: 70px;
+}
+/* line 332, et2013.scss */
+.main-content .box:after {
+  content: " ";
+  background-color: #111;
+  position: absolute;
+  height: 30px;
+  width: 4px;
+  left: -5px;
+  top: 10px;
+}
+
+/* line 343, et2013.scss */
+blockquote {
+  margin: 17px 0px 0 50px;
+  font-family: 'Abel',sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  position: relative;
+}
+/* line 350, et2013.scss */
+blockquote .copy {
+  /* max-height:94px;*/
+}
+/* line 353, et2013.scss */
+blockquote .copy a {
+  color: #ff6600;
+  text-decoration: none;
+}
+/* line 356, et2013.scss */
+blockquote .copy a:hover {
+  text-decoration: underline;
+}
+/* line 361, et2013.scss */
+blockquote:before {
+  color: #ff6600;
+  content: "“";
+  display: block;
+  font-size: 80px;
+  left: -42px;
+  position: absolute;
+  top: -27px;
+  font-family: 'LucidaGrandeRegular';
+}
+/* line 372, et2013.scss */
+blockquote cite {
+  font-size: 12px;
+  margin-top: 20px;
+  overflow: hidden;
+  display: block;
+}
+/* line 377, et2013.scss */
+blockquote cite img {
+  float: right;
+  margin-left: 10px;
+}
+/* line 381, et2013.scss */
+blockquote .more {
+  display: none;
+}
+
+/* line 386, et2013.scss */
+.author,
+.job {
+  margin: 0px;
+  text-align: right;
+  text-transform: capitalize;
+}
+
+/* line 392, et2013.scss */
+.author {
+  font-weight: bold;
+}
+
+/* line 393, et2013.scss */
+.job {
+  color: #ff6600;
+}
+
+/* line 394, et2013.scss */
+.out {
+  position: absolute;
+  left: 20px;
+  bottom: -22px;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 5px 10px 0;
+  font-size: 12px;
+  display: block;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+/* line 403, et2013.scss */
+.out:hover {
+  padding: 15px 10px 0px;
+  bottom: -32px;
+}
+
+/* line 408, et2013.scss */
+.out.apoiar {
+  background-color: #ff6600;
+  color: #fff;
+}
+/* line 411, et2013.scss */
+.out.apoiar:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+  border: none;
+  border-right: 187px solid transparent;
+  border-top: 15px solid #ff6600;
+}
+
+/* line 418, et2013.scss */
+ul.noticias {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+/* line 420, et2013.scss */
+ul.noticias li {
+  overflow: hidden;
+  padding: 0 0 20px;
+  position: relative;
+  border-bottom: dotted 1px #aaa;
+  padding-bottom: 20px;
+  margin-bottom: 10px;
+}
+/* line 421, et2013.scss */
+ul.noticias li.last {
+  border: none;
+}
+/* line 422, et2013.scss */
+ul.noticias a {
+  text-decoration: none;
+  color: #333;
+}
+/* line 423, et2013.scss */
+ul.noticias a:hover {
+  color: #ff6600;
+}
+/* line 426, et2013.scss */
+ul.noticias a:before {
+  content: " + ";
+  color: #ff6600;
+}
+
+/* line 431, et2013.scss */
+ul.eventos {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+/* line 433, et2013.scss */
+ul.eventos li {
+  overflow: hidden;
+  padding: 0 0 20px;
+  position: relative;
+}
+/* line 434, et2013.scss */
+ul.eventos .date {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #ff6600;
+  color: #FFF;
+  width: 28px;
+  padding: 10px 4px 4px;
+  text-align: center;
+  line-height: 1em;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+/* line 447, et2013.scss */
+ul.eventos .date .dia {
+  font-size: 20px;
+  font-weight: bold;
+}
+/* line 448, et2013.scss */
+ul.eventos .date:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -12px;
+  border: none;
+  border-right: 36px solid transparent;
+  border-top: 12px solid #ff6600;
+}
+/* line 455, et2013.scss */
+ul.eventos .info {
+  margin: 0 0 0px 46px;
+  padding-bottom: 10px;
+  border-bottom: dotted 1px #aaa;
+}
+/* line 460, et2013.scss */
+ul.eventos .info h4 {
+  font-weight: bold;
+  color: #ff6600;
+}
+/* line 462, et2013.scss */
+ul.eventos .last .info {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+@media only screen and (max-width: 1240px) {
+  /* line 468, et2013.scss */
+  .wrap {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 1040px) {
+  /* line 471, et2013.scss */
+  .wrap {
+    width: 96%;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  /* line 475, et2013.scss */
+  .block-wrap {
+    padding-right: 0px;
+  }
+
+  /* line 477, et2013.scss */
+  .header-bar .wrap .content {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  /* line 479, et2013.scss */
+  .main-header nav, .main-header nav ul, .main-header nav li {
+    float: none;
+    text-align: center;
+  }
+
+  /* line 480, et2013.scss */
+  .main-header nav ul {
+    margin: 0 0 20px;
+  }
+
+  /* line 481, et2013.scss */
+  .main-header nav li {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* line 484, et2013.scss */
+  .main-header nav li a {
+    margin: 0 0 2px;
+    padding: 10px 0;
+    display: none;
+  }
+  /* line 487, et2013.scss */
+  .main-header nav li a.open-menu .esconder {
+    display: none;
+  }
+  /* line 489, et2013.scss */
+  .main-header nav li a.open-menu, .main-header nav li a.active {
+    display: block;
+  }
+
+  /* line 493, et2013.scss */
+  .main-header nav .showAll li a {
+    display: block;
+  }
+  /* line 496, et2013.scss */
+  .main-header nav .showAll li a.open-menu .esconder {
+    display: inline;
+  }
+  /* line 497, et2013.scss */
+  .main-header nav .showAll li a.open-menu .mostrar {
+    display: none;
+  }
+
+  /* line 501, et2013.scss */
+  .main-header nav li a .bg {
+    border: none!important;
+  }
+
+  /* line 510, et2013.scss */
+  .main-header nav li a:hover,
+  .main-header nav li a.active
+  body.a-candidatura .main-header nav li a.a-candidatura,
+  body.homepage .main-header nav li a.homepage,
+  body.noticias .main-header nav li a.noticias,
+  body.clipping .main-header nav li a.clipping,
+  body.apoiar .main-header nav li a.apoiar,
+  body.contactos .main-header nav li a.contactos {
+    color: #fff;
+    background-color: #ff6600;
+  }
+
+  /* line 512, et2013.scss */
+  .main-footer {
+    padding: 15px 0 10px;
+  }
+
+  /* line 513, et2013.scss */
+  .main-footer ul, .main-footer ul.social {
+    float: none;
+    text-align: center;
+  }
+
+  /* line 514, et2013.scss */
+  .main-footer ul li, .main-footer ul li a {
+    float: none;
+    text-align: center;
+    padding: 2px 0;
+  }
+
+  /* line 515, et2013.scss */
+  .main-footer ul.social li, .main-footer ul.social li a {
+    padding: 0;
+    display: inline;
+  }
+
+  /* line 516, et2013.scss */
+  .main-footer ul.social li a.facebook {
+    padding: 0 10px 0;
+  }
+
+  /* line 517, et2013.scss */
+  .main-footer .bottom img {
+    display: none;
+  }
+
+  /* line 518, et2013.scss */
+  .main-footer .bottom {
+    text-align: center;
+  }
+
+  /* line 519, et2013.scss */
+  .main-footer .bottom span {
+    position: relative;
+  }
+
+  /* line 522, et2013.scss */
+  .main-content {
+    overflow: visible;
+    padding: 20px 0 30px;
+  }
+  /* line 525, et2013.scss */
+  .main-content .block2 {
+    margin-top: 50px;
+  }
+  /* line 528, et2013.scss */
+  .main-content .block1, .main-content .block2 {
+    float: none;
+    width: auto;
+  }
+}
+/* line 535, et2013.scss */
+.fb-like {
+  margin: 40px 0;
+}
+
+/* line 536, et2013.scss */
+.fb-like.small {
+  margin: 10px 0 0;
+  float: right;
+}
+
+/* line 544, et2013.scss */
+body.apoiar .main-content h1 {
+  margin-bottom: 1em;
+}
+/* line 546, et2013.scss */
+body.apoiar .vgrid-wrap {
+  margin: 0 -6px;
+}
+/* line 549, et2013.scss */
+body.apoiar .main-content .vgrid {
+  position: relative;
+  overflow: hidden;
+}
+/* line 551, et2013.scss */
+body.apoiar .main-content .vgrid .item {
+  width: 25%;
+  display: block;
+  margin: 0 0 12px;
+  position: relative;
+  float: left;
+  min-height: 80px;
+}
+/* line 552, et2013.scss */
+body.apoiar .main-content .vgrid .item.itemx2 {
+  width: 50%;
+}
+/* line 553, et2013.scss */
+body.apoiar .main-content .vgrid .item a {
+  display: block;
+  text-decoration: none;
+  position: relative;
+}
+/* line 555, et2013.scss */
+body.apoiar .main-content .vgrid .item img {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+  border: 2px solid #fff;
+}
+/* line 558, et2013.scss */
+body.apoiar .main-content .vgrid .item.badge img {
+  border: none;
+}
+/* line 559, et2013.scss */
+body.apoiar .main-content .vgrid .item.badge .desc {
+  padding-left: 88px;
+  min-height: 88px;
+}
+/* line 562, et2013.scss */
+body.apoiar .main-content .vgrid .item.badge .item-data {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #FF6600;
+}
+/* line 564, et2013.scss */
+body.apoiar .main-content .vgrid .item.badge .item-data h2 {
+  color: #fff;
+}
+/* line 565, et2013.scss */
+body.apoiar .main-content .vgrid .item.badge .item-data h3 {
+  color: #fff;
+}
+/* line 568, et2013.scss */
+body.apoiar .main-content .vgrid .item .apoiante {
+  padding-left: 64px;
+  min-height: 64px;
+}
+/* line 569, et2013.scss */
+body.apoiar .main-content .vgrid .item h2 {
+  font-size: 18px;
+  padding-bottom: 0;
+  color: #ff6600;
+  text-transform:  capitalize;
+}
+/* line 570, et2013.scss */
+body.apoiar .main-content .vgrid .item h3 {
+  font-size: 14px;
+}
+/* line 572, et2013.scss */
+body.apoiar .main-content .vgrid .item .item-data {
+  position: relative;
+  overflow: hidden;
+  margin: 0 6px;
+  background-color: #f0f0f0;
+  padding: 6px;
+}
+/* line 573, et2013.scss */
+body.apoiar .main-content .vgrid .item .item-data:hover {
+  background-color: #FF6600;
+  color: #FFF;
+}
+/* line 576, et2013.scss */
+body.apoiar .main-content .vgrid .item .item-data:hover h2 {
+  color: #000;
+}
+/* line 581, et2013.scss */
+body.apoiar .main-content .vgrid .item.form-apoiar .item-data, body.apoiar .main-content .vgrid .item.form-apoiar .item-data:hover {
+  background-color: #ff6600;
+  color: #fff;
+}
+/* line 583, et2013.scss */
+body.apoiar .main-content .vgrid .item.form-apoiar .item-data h2, body.apoiar .main-content .vgrid .item.form-apoiar .item-data:hover h2 {
+  color: #fff;
+}
+/* line 590, et2013.scss */
+body.apoiar .form-apoiar .item-data {
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+}
+/* line 592, et2013.scss */
+body.apoiar .form-apoiar .form-wrap {
+  padding: 6px;
+}
+/* line 594, et2013.scss */
+body.apoiar .form-apoiar .input-full-width {
+  padding: 10px;
+}
+/* line 597, et2013.scss */
+body.apoiar .form-apoiar .input-full-width input,
+body.apoiar .form-apoiar .input-full-width textarea {
+  position: relative;
+  border: 1px solid #aaa;
+  outline: none;
+  padding: 10px;
+  margin: 0 -10px 20px;
+  font-size: 14px;
+  width: 100%;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+/* line 599, et2013.scss */
+body.apoiar .form-apoiar .input-full-width input.small,
+body.apoiar .form-apoiar .input-full-width textarea.small {
+  width: 50%;
+  margin-right: 10px;
+}
+/* line 605, et2013.scss */
+body.apoiar .form-apoiar .input-full-width textarea {
+  height: 100px;
+}
+/* line 607, et2013.scss */
+body.apoiar .form-apoiar div.submit {
+  position: relative;
+  margin-bottom: 15px;
+}
+/* line 608, et2013.scss */
+body.apoiar .form-apoiar input[type=submit] {
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  width: auto;
+  padding: 10px 30px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border: none;
+  background-color: #fff;
+  color: #ff6600;
+  text-transform: uppercase;
+  font-family: 'Abel', sans-serif;
+  font-size: 20px;
+}
+/* line 611, et2013.scss */
+body.apoiar .form-apoiar input[type=submit]:hover {
+  background-color: #333;
+  color: #ff6600;
+}
+/* line 615, et2013.scss */
+body.apoiar .form-apoiar .validationError {
+  border-color: #333 !important;
+  color: #ff6600 !important;
+}
+/* line 616, et2013.scss */
+body.apoiar .form-apoiar .error {
+  text-align: right;
+  color: #333;
+  /* IE 8 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$val*100)";
+  /* IE 5-7 */
+  filter: alpha(opacity=0);
+  /* Netscape */
+  -moz-opacity: 0;
+  /* Safari 1.x */
+  -khtml-opacity: 0;
+  /* Good browsers */
+  opacity: 0;
+  zoom: 1;
+}
+/* line 617, et2013.scss */
+body.apoiar .form-apoiar .warning {
+  font-size: 12px;
+}
+/* line 618, et2013.scss */
+body.apoiar .form-apoiar .opcional {
+  font-size: 12px;
+}
+/* line 619, et2013.scss */
+body.apoiar .form-apoiar form {
+  position: relative;
+}
+/* line 620, et2013.scss */
+body.apoiar .form-apoiar .obrigado {
+  display: none;
+  padding: 20px 0 0;
+}
+/* line 621, et2013.scss */
+body.apoiar .form-apoiar .obrigado h3 {
+  font-size: 20px;
+  text-transform:  none;
+}
+/* line 623, et2013.scss */
+body.apoiar .form-apoiar .preloader {
+  display: none;
+  position: absolute;
+  top: 0px;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  padding: 20px 15px;
+  margin: -15px;
+  background-image: url(/img/white.png);
+}
+/* line 626, et2013.scss */
+body.apoiar .form-apoiar .preloader div {
+  height: 100%;
+  background: url(/img/preloader.gif) center center no-repeat;
+}
+
+/* line 634, et2013.scss */
+.gallery-wrap {
+  background-color: #f0f0f0;
+  overflow: hidden;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
+  padding: 6px;
+}
+/* line 636, et2013.scss */
+.gallery-wrap .item {
+  width: 33.33%;
+  float: left;
+}
+/* line 639, et2013.scss */
+.gallery-wrap .item a {
+  display: block;
+  margin: 6px;
+}
+/* line 640, et2013.scss */
+.gallery-wrap .item img {
+  width: 100%;
+  position: relative;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
+}
+
+/* line 647, et2013.scss */
+body.clipping .main-content {
+  overflow: visible;
+}
+/* line 649, et2013.scss */
+body.clipping .main-content h1 {
+  margin-bottom: 1em;
+}
+/* line 651, et2013.scss */
+body.clipping .vgrid-wrap {
+  margin: 0 -6px;
+}
+/* line 654, et2013.scss */
+body.clipping .main-content .vgrid {
+  position: relative;
+  overflow: hidden;
+}
+/* line 656, et2013.scss */
+body.clipping .main-content .vgrid a {
+  text-decoration: none;
+  display: block;
+  border: 6px solid #f0f0f0;
+  margin: 0 6px;
+}
+/* line 658, et2013.scss */
+body.clipping .main-content .vgrid a:hover {
+  border-color: #FF6600;
+}
+/* line 660, et2013.scss */
+body.clipping .main-content .vgrid a:hover .info {
+  /* IE 8 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$val*100)";
+  /* IE 5-7 */
+  filter: alpha(opacity=100);
+  /* Netscape */
+  -moz-opacity: 1;
+  /* Safari 1.x */
+  -khtml-opacity: 1;
+  /* Good browsers */
+  opacity: 1;
+  zoom: 1;
+  bottom: 0px;
+}
+/* line 667, et2013.scss */
+body.clipping .main-content .vgrid .item {
+  width: 25%;
+  display: block;
+  float: left;
+  min-height: 100px;
+  margin: 0 0 12px;
+  position: relative;
+  overflow: hidden;
+}
+/* line 670, et2013.scss */
+body.clipping .main-content .vgrid .item .item-data {
+  position: relative;
+  overflow: hidden;
+}
+/* line 673, et2013.scss */
+body.clipping .main-content .vgrid .item .info {
+  display: block;
+  font-size: 11px;
+  /* IE 8 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$val*100)";
+  /* IE 5-7 */
+  filter: alpha(opacity=0);
+  /* Netscape */
+  -moz-opacity: 0;
+  /* Safari 1.x */
+  -khtml-opacity: 0;
+  /* Good browsers */
+  opacity: 0;
+  zoom: 1;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #f0f0f0;
+  padding: 6px 6px;
+  color: #ff6600;
+  text-align: left;
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  width: 100%;
+}
+/* line 686, et2013.scss */
+body.clipping .main-content .vgrid .item .info h3 {
+  color: #333;
+  font-size: 14px;
+}
+/* line 688, et2013.scss */
+body.clipping .main-content .vgrid .item img {
+  width: 100%;
+}
+
+@media only screen and (max-width: 1000px) {
+  /* line 695, et2013.scss */
+  body.clipping .main-content .vgrid .item {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 500px) {
+  /* line 699, et2013.scss */
+  body.clipping .main-content .vgrid .item {
+    width: 100%;
+  }
+  /* line 701, et2013.scss */
+  body.clipping .main-content .vgrid .item .info {
+    /* IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$val*100)";
+    /* IE 5-7 */
+    filter: alpha(opacity=100);
+    /* Netscape */
+    -moz-opacity: 1;
+    /* Safari 1.x */
+    -khtml-opacity: 1;
+    /* Good browsers */
+    opacity: 1;
+    zoom: 1;
+    bottom: 0;
+  }
+}
+
+
+/* Hover Effects */
+.cover{
+    background-color: #ffffff;
+    width: 20%;
+}
+.boxgrid {
+    width: 100%;
+    height: 250px;
+    float:left;
+    margin-bottom: 20px;
+    overflow: hidden;
+    position: relative; }
+.boxgrid img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 0;
+    min-height: 100%;
+    min-width: 100%; }
+.boxgrid p {
+    padding: 0;
+    color:#afafaf;
+    font-weight:bold;
+    font:10pt "Lucida Grande", Arial, sans-serif; }
+.boxcaption{
+    float: left;
+    position: absolute;
+    background: #000;
+    height: 200px;
+    width: 100%;
+    opacity: .8;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+    -MS-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)"; }
+.captionfull .boxcaption {
+    top: 260;
+    left: 0; }
+.caption .boxcaption {
+    top: 220;
+    left: 0; }
+@media (max-width: 979px) {
+    .boxgrid { height: 100px; } }
+@media (max-width: 767px) {
+    .boxgrid { height: 250px; } }
+@media (max-width: 480px) {
+    .boxgrid { height: 250px; } }
+
+
+/* Content General */
+.doc-no-top { padding-top: 50px; }
+.content-panel-title {
+    padding: 20px;
+    margin: 20px;
+    border-right: 1px solid rgba(147,147,147,0.5); }
+.content-panel {
+    padding: 20px;
+    margin: 20px;
+    min-height: 70px; }
+.content-image {
+    margin-bottom: 20px;
+    width: 100%; }
+
+
