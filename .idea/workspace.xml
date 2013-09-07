@@ -9,7 +9,7 @@
     <ignored path="Os Rostos da União.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="a87e880a-c652-4504-8c65-d39fbbeb8c9a" time="1378478993049" ignored="false" />
-    <file path="/apoiantes.html" changelist="a87e880a-c652-4504-8c65-d39fbbeb8c9a" time="1378484357382" ignored="false" />
+    <file path="/apoiantes.html" changelist="a87e880a-c652-4504-8c65-d39fbbeb8c9a" time="1378558972711" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +32,7 @@
       <file leaf-file-name="apoiantes.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/apoiantes.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="859" column="29" selection-start="27177" selection-end="27177" vertical-scroll-proportion="0.373297">
+            <state line="360" column="28" selection-start="11616" selection-end="11616" vertical-scroll-proportion="0.5980926">
               <folding />
             </state>
           </provider>
@@ -260,7 +260,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/apoiantes.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="859" column="29" selection-start="27177" selection-end="27177" vertical-scroll-proportion="0.373297">
+        <state line="360" column="28" selection-start="11616" selection-end="11616" vertical-scroll-proportion="0.5980926">
           <folding />
         </state>
       </provider>
