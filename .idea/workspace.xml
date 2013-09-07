@@ -4,11 +4,12 @@
     <list default="true" id="a87e880a-c652-4504-8c65-d39fbbeb8c9a" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/fotos/Nazare.png" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/img/fotos/Nazaré.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apoiantes.html" afterPath="$PROJECT_DIR$/apoiantes.html" />
     </list>
     <ignored path="Os Rostos da União.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="a87e880a-c652-4504-8c65-d39fbbeb8c9a" time="1378478993049" ignored="false" />
-    <file path="/apoiantes.html" changelist="a87e880a-c652-4504-8c65-d39fbbeb8c9a" time="1378559798329" ignored="false" />
+    <file path="/apoiantes.html" changelist="a87e880a-c652-4504-8c65-d39fbbeb8c9a" time="1378558972711" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +32,7 @@
       <file leaf-file-name="apoiantes.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/apoiantes.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="669" column="30" selection-start="21240" selection-end="21240" vertical-scroll-proportion="-0.71253407">
+            <state line="360" column="28" selection-start="11616" selection-end="11616" vertical-scroll-proportion="0.5980926">
               <folding />
             </state>
           </provider>
@@ -259,7 +260,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/apoiantes.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="669" column="30" selection-start="21240" selection-end="21240" vertical-scroll-proportion="-0.71253407">
+        <state line="360" column="28" selection-start="11616" selection-end="11616" vertical-scroll-proportion="0.5980926">
           <folding />
         </state>
       </provider>
