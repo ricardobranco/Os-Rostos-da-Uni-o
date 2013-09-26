@@ -44,19 +44,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="23" selection-start="1594" selection-end="1594" vertical-scroll-proportion="-4.936709">
+            <state line="156" column="121" selection-start="5424" selection-end="5424" vertical-scroll-proportion="0.25">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="plano.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="plano.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/plano.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="233" column="13" selection-start="10081" selection-end="10081" vertical-scroll-proportion="0.925">
+            <state line="233" column="13" selection-start="10081" selection-end="10081" vertical-scroll-proportion="-7.025316">
               <folding />
             </state>
           </provider>
@@ -99,9 +99,9 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/dist/css/video.css" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/apoiantes.html" />
         <option value="$PROJECT_DIR$/plano.html" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -414,13 +414,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="23" selection-start="1594" selection-end="1594" vertical-scroll-proportion="-4.936709">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apoiantes.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="45" column="16" selection-start="1373" selection-end="1373" vertical-scroll-proportion="515.2917">
@@ -430,7 +423,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/plano.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="233" column="13" selection-start="10081" selection-end="10081" vertical-scroll-proportion="0.925">
+        <state line="233" column="13" selection-start="10081" selection-end="10081" vertical-scroll-proportion="-7.025316">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="156" column="121" selection-start="5424" selection-end="5424" vertical-scroll-proportion="0.25">
           <folding />
         </state>
       </provider>
