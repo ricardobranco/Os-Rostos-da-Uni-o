@@ -3,11 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="a87e880a-c652-4504-8c65-d39fbbeb8c9a" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/js/jquery.video-ui.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plano.html" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/css/video-default.css" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/css/video.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apoiantes.html" afterPath="$PROJECT_DIR$/apoiantes.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plano.html" afterPath="$PROJECT_DIR$/plano.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Os Rostos da União.iws" />
@@ -15,7 +15,7 @@
     <file path="/Dummy.txt" changelist="a87e880a-c652-4504-8c65-d39fbbeb8c9a" time="1380120678273" ignored="false" />
     <file path="/apoiantes.html" changelist="a87e880a-c652-4504-8c65-d39fbbeb8c9a" time="1378668871395" ignored="false" />
     <file path="/index.html" changelist="a87e880a-c652-4504-8c65-d39fbbeb8c9a" time="1380123120847" ignored="false" />
-    <file path="/plano.html" changelist="a87e880a-c652-4504-8c65-d39fbbeb8c9a" time="1380214641767" ignored="false" />
+    <file path="/plano.html" changelist="a87e880a-c652-4504-8c65-d39fbbeb8c9a" time="1380214878881" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,10 +35,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="apoiantes.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="apoiantes.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apoiantes.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="16" selection-start="1373" selection-end="1373" vertical-scroll-proportion="0.6287425">
+            <state line="45" column="16" selection-start="1373" selection-end="1373" vertical-scroll-proportion="515.2917">
               <folding />
             </state>
           </provider>
@@ -53,10 +53,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="plano.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="plano.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/plano.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="87" selection-start="1576" selection-end="1639" vertical-scroll-proportion="-5.316456">
+            <state line="233" column="13" selection-start="10081" selection-end="10081" vertical-scroll-proportion="0.925">
               <folding />
             </state>
           </provider>
@@ -99,9 +99,9 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/dist/css/video.css" />
-        <option value="$PROJECT_DIR$/plano.html" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/apoiantes.html" />
+        <option value="$PROJECT_DIR$/plano.html" />
       </list>
     </option>
   </component>
@@ -297,13 +297,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="817" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16786227" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16786227" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -414,13 +414,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/plano.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="87" selection-start="1576" selection-end="1639" vertical-scroll-proportion="-5.316456">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="49" column="23" selection-start="1594" selection-end="1594" vertical-scroll-proportion="-4.936709">
@@ -430,7 +423,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/apoiantes.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="16" selection-start="1373" selection-end="1373" vertical-scroll-proportion="0.6287425">
+        <state line="45" column="16" selection-start="1373" selection-end="1373" vertical-scroll-proportion="515.2917">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plano.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="233" column="13" selection-start="10081" selection-end="10081" vertical-scroll-proportion="0.925">
           <folding />
         </state>
       </provider>
