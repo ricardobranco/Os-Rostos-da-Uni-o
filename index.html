@@ -10,7 +10,7 @@
     <!-- Bootstrap core CSS -->
     <link href="./dist/css/bootstrap.css" rel="stylesheet">
 
-    <link href="./assets/css/docs.css" rel="stylesheet">
+      <link href="./assets/css/docs.css" rel="stylesheet">
 
       <link href="./dist/css/style.css" rel="stylesheet">
 
@@ -46,6 +46,8 @@
                     <li class="active"><a href="index.html">Home</a></li>
 
                     <li><a href="apoiantes.html">Apoiantes</a></li>
+
+                    <li><a href="plano.html">Plano de Ação</a> </li>
 
                 </ul>
             </div>
@@ -90,24 +92,54 @@
         <div class="col-md-7">
            
           <h2 class="featurette-heading">Caros Conterrâneos,</h2>
-          <p class="lead">Nas eleições de 29 de setembro, vamos escolher mais do que o executivo para as nossas freguesias!
-          Vamos fazer opções que hão de determinar a União das Freguesias que queremos ter.</p>
-          <p class="lead">
-              A lista de candidatos pelo PSD que se propõe à Assembleia de Freguesia da União das Freguesias de Torre e Vila Mou, pretende alargar o debate e envolver
-              todos os Torrenses e Vilamouenses num projecto de cidadania ativa, aberta ao diálogo com as pessoas, aceitando ideias e contributos válidos.
-          </p>
-          <p class="lead">
-              Consideramos a União das Freguesias como um desafio, pois temos a consciência dos problemas que todos enfrentamos. Somos do povo. Somos humildes e juntos vamos encarar esta nova realidade.
-              Por isso, decidimos avançar, formando uma lista composta por um grupo alargado de cidadãos, na qual se incluem todos aqueles que gostam das suas terras e que, de forma <strong>LIVRE</strong> e <strong>VOLUNTÁRIA </strong> aceitaram integra-la, tendo como ambição fazer mais e melhor pelas nossas terras!
-          </p>
-          <p class="lead">Estamos determinados a trabalhar pelas freguesias de Torre e Vila Mou, de forma equilibrada e racional! O que nos move é o sonho de conseguir respostas sociais de proximidade; trabalhar para o bem comum; criar mais e melhor qualidade de vida para as diferentes gerações.
-              </p>
-            <p class="lead"> Acreditamos que, apesar da crise, de que tanto se fala, com dedicação, empenho e trabalho, e, sobretudo <strong>UNIÃO</strong>, tudo se consegue, tudo se supera! Contamos com o apoio de todos! Porque… <strong>JUNTOS</strong> somos mais fortes!
+          <p class="lead">Esta é uma candidatura transversal que coloca sempre as pessoas em primeiro lugar.
 
+              Pretendemos continuar a ouvir as principais preocupações da população de Torre e
+
+              Vila Mou, estando em contacto permanente com a mesma, fomentando as relações de
+
+              proximidade e confiança da Junta de Freguesia com todos os cidadãos, garantindo o
+
+              funcionamento das atuais sedes, bem como todos os serviços aí prestados.</p>
+          <p class="lead">
+              A atividade futura passará pela divisão equitativa de investimentos pelas duas freguesias,
+
+              através de uma gestão participada, na qual terá primordial importância o envolvimento
+
+              direto dos cidadãos, que sairão da condição de meros espectadores dos acontecimentos e
+
+              passarão a ter voz ativa na tomada de decisões.</p>
+          <p class="lead">
+              Promoveremos o trabalho em equipa e a constituição de grupos de trabalho com
+
+              voluntários, promovendo o respeito pela especificidade / tradições / usos e costumes das
+
+              duas comunidades.
+          </p>
+
+            <p class="lead">Queremos conquistar o apoio de toda a população, demonstrando que temos um projeto
+
+                de qualidade, sério, real e implementável, com credibilidade, sem truques, que merece a
+
+                vossa confiança.</p>
+            <p class="lead"> Num espaço temporal de enorme exigência, temos de estar empenhados
+
+                e juntos para enfrentar o futuro, que se avizinha com esperança e na certeza de que
+
+                seremos capazes de o encarar sem receios e entraves.
              </p>
-            <p class="lead">Aqui crescemos, aqui vivemos e aqui sentimos as <strong>NOSSAS TERRAS</strong>.
-            </p> <br>
-            <p class="lead">            Cordiais Saudações,
+            <p class="lead">Estamos convictos que podemos contribuir de forma significativa para o desenvolvimento
+
+                da União das Freguesias de Torre e Vila Mou, assim como o bem-estar de todos os seus
+
+                habitantes.</p>
+            <p class="lead">
+                Fazemo-lo pelas terras onde nascemos, crescemos, criamos raízes e nos formamos como
+
+                pessoas e cidadãos, e pelas quais sentimos um enorme carinho e uma verdadeira paixão!
+            </p>
+            <br>
+            <p class="lead"> Contamos convosco. Podem contar sempre connosco!
             </p>
              <p class="lead"> Filipe Costa <br>
                  Marinho Couto   <br>
@@ -121,6 +153,10 @@
           <div class="col-md-5">
               <img class="featurette-image img-responsive" src="img/mapa.jpg">
               <img class="featurette-image img-responsive" src="img/brasoes.png">
+
+              <iframe width="425" height="349" src="http://www.youtube.com/embed/TjTdtDs27GA" frameborder="0" allowfullscreen></iframe>
+
+
           </div>
 
 
@@ -192,7 +228,13 @@
 
     <script type="text/javascript" src="dist/js/script.js"></script>
     <script type="text/javascript">parallax(); large_navbar_change(); large_slider_top(); parallax_slider(); clients(); portfolio_effects();</script>
-
+    <script type="text/javascript" src="dist/js/jquery.fitvids.js"></script>
+    <script>
+        // Basic FitVids Test
+        $(".container").fitVids();
+        // Custom selector and No-Double-Wrapping Prevention Test
+        $(".container").fitVids({ customSelector: "iframe[src^='http://socialcam.com']"});
+    </script>
 
   </body>
 </html>
